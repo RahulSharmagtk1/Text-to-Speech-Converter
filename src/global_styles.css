@@ -22,10 +22,6 @@
   --input-bg-color: white;
   --hover-color: #f3f4f6;
   --card-bg-color: white;
-  
-  /* Animation Variables */
-  --transition-speed: 0.3s;
-  --animation-curve: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-mode {
@@ -52,8 +48,7 @@ body {
   line-height: 1.5;
   color: var(--text-color);
   background-color: var(--bg-color);
-  transition: background-color var(--transition-speed) var(--animation-curve),
-              color var(--transition-speed) var(--animation-curve);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button, input, select, textarea {
@@ -65,28 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input, select, textarea, button {
-  transition: all var(--transition-speed) var(--animation-curve);
-}
-
-/* Theme Toggle Animation */
-.theme-toggle {
-  transform-origin: center;
-  transition: transform 0.5s var(--animation-curve);
-}
-
-.theme-toggle:hover {
-  transform: rotate(180deg);
-}
-
-/* Speech Animation */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.speaking {
-  animation: pulse 2s var(--animation-curve) infinite;
+  transition: all 0.2s ease;
 }
 
 /* Firefox scrollbars */
@@ -112,19 +86,6 @@ input, select, textarea, button {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--primary-color);
-}
-
-/* Fade Animations */
-.fade-enter {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity var(--transition-speed) var(--animation-curve),
-              transform var(--transition-speed) var(--animation-curve);
 }
 
 @media (max-width: 768px) {
